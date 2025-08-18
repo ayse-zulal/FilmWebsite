@@ -8,11 +8,9 @@ type Props = {
 function Results({ movies, selectedTags }: Props) {
   const filtered = movies.filter((m) => {
   const match = selectedTags.every((tag) => m.tags.includes(tag));
-  console.log("Movie tags:", m.tags, "Selected:", selectedTags, "Match:", match);
   return match;
 });
 
-console.log("Filtered movies:", filtered);
 
 
   return (
