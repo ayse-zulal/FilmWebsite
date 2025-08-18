@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Inception",
+    "cover": "https://res.cloudinary.com/dvv4yznic/image/upload/v1748891004/ax2tjl9cb1ijezvv3xqk.png",
+    "description": "A skilled thief is given a chance at redemption if he can successfully perform an inception.",
+    "tags": ["action", "pg13", "comedy"],
+    "comment": "A mind-blowing journey into dreams within dreams."
+  },
+  {
+    "title": "The Dark Knight",
+    "cover": "/images/dark_knight.jpg",
+    "description": "Batman faces his greatest psychological and physical tests when the Joker wreaks havoc on Gotham.",
+    "tags": ["action", "drama", "hero", "pg13"],
+    "comment": "One of the most iconic portrayals of a superhero and a villain."
+  },
+  {
+    "title": "Interstellar",
+    "cover": "/images/interstellar.jpg",
+    "description": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival.",
+    "tags": ["sci-fi", "adventure", "space", "pg13"],
+    "comment": "A visually stunning and emotionally charged space epic."
+  },
+  {
+    "title": "The Matrix",
+    "cover": "/images/matrix.jpg",
+    "description": "A computer hacker learns about the true nature of his reality and his role in the war against its controllers.",
+    "tags": ["sci-fi", "action", "philosophical", "pg13"],
+    "comment": "A groundbreaking film that questions reality and perception."
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "cover": "/images/shawshank.jpg",
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "tags": ["drama", "crime", "friendship", "pg18"],
+    "comment": "A powerful story of hope and resilience."
+  },
+  {
+    "title": "Pulp Fiction",
+    "cover": "/images/pulp_fiction.jpg",
+    "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "tags": ["crime", "drama", "dark humor", "pg18"],
+    "comment": "A cult classic with unforgettable characters and dialogue."
+  },
+  {
+    "title": "Forrest Gump",
+    "cover": "/images/forrest_gump.jpg",
+    "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal, and other historical events unfold through the perspective of an Alabama man with an IQ of 75.",
+    "tags": ["drama", "romance", "history", "pg13"],
+    "comment": "A heartwarming tale that explores the human experience."
+  },
+  {
+    "title": "The Godfather",
+    "cover": "/images/godfather.jpg",
+    "description": "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
+    "tags": ["crime", "drama", "family", "pg18"],
+    "comment": "A masterpiece of storytelling and character development."
+  },
+  {
+    "title": "Fight Club",
+    "cover": "/images/fight_club.jpg",
+    "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much more.",
+    "tags": ["drama", "psychological", "cult", "pg18"],
+    "comment": "A provocative exploration of identity and consumerism."
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "cover": "/images/lord_of_the_rings.jpg",
+    "description": "A meek hobbit of the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+    "tags": ["fantasy", "adventure", "epic", "pg13"],
+    "comment": "An epic tale of friendship, courage, and sacrifice."
+  }
+]
