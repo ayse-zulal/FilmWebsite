@@ -19,15 +19,15 @@ Styled with plain CSS for simplicity
 
 ## 📂 Project Structure
 film-app/
-  ├─ public/
-  │   └─ movies.json   # Movie list (sample data)
-  ├─ src/
-  │   ├─ components/
-  │   │   ├─ Question.jsx
-  │   │   └─ Results.jsx
-  │   ├─ App.jsx
-  │   ├─ index.css
-  │   └─ main.jsx
+  public/
+    movies.json   # Movie list (sample data)
+  src/
+    components/
+      Question.jsx
+      Results.jsx
+    App.jsx
+    index.css
+    main.jsx
 
 ## 🔧 Setup
 
