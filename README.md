@@ -34,8 +34,8 @@ film-app/
 To run locally:
 
 # Clone the repo
-git clone https://github.com/username/film-app.git
-cd film-app
+git clone https://github.com/ayse-zulal/FilmWebsite.git
+cd FilmWebsite
 
 # Install dependencies
 npm install
