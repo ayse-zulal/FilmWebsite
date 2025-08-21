@@ -40,7 +40,7 @@ app.post("/chat", async (req, res) => {
     const ficList = ficRes.rows;
 
     const systemPrompt = `
-    Sen bir fiction öneri asistanısın.
+    Sen bir wattpad fanfiction öneri asistanısın.
     Sadece aşağıdaki listeden öneriler yapabilirsin.
     Liste: ${JSON.stringify(ficList)}
     Konuşma boyunca kullanıcının ne istediğini hatırla.
@@ -86,21 +86,44 @@ app.get("/fics", async (req, res) => {
   try {
     const { tags } = req.query; 
     let query = "SELECT * FROM fics WHERE is_completed = $1";
-    let params = [true];
+    const params = [true];
+    console.log("Received tags:", tags);
 
     if (tags) {
-      const tagArray = tags.split(",");
-      query += " AND tags && $1::text[]"; 
-      params = [true, tagArray];
+      // JS tarafında tagleri temizle: trim, lowercase, boşluk kaldır
+      const tagArray = tags
+        .split(",")
+        .map(tag => tag.trim().toLowerCase().replace(/\s+/g, ""));
+
+      // PostgreSQL'de tags array mi yoksa string mi kontrol et
+      // Eğer text[] ise EXISTS + unnest
+      // Eğer text ise ILIKE kullan
+      query += `
+        AND (
+          EXISTS (
+            SELECT 1 
+            FROM unnest(tags) t
+            WHERE regexp_replace(lower(t), '\\s+', '', 'g') = ANY($2::text[])
+          )
+          OR
+          LOWER(regexp_replace(tags::text, '\\s+', '', 'g')) = ANY($2::text[])
+        )
+      `;
+
+      params.push(tagArray);
     }
 
     const result = await pool.query(query, params);
+    console.log("Fics fetched:", result.rows);
     res.json({ fics: result.rows });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Fic fetch failed" });
   }
 });
+
+
+
 
 app.get("/fics/list", async (req, res) => {
   const ids = req.query.ids ? req.query.ids.split(",") : [];
