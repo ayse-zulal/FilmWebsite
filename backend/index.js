@@ -11,7 +11,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+});
 
 app.post("/conversation", async (req, res) => {
   try {
