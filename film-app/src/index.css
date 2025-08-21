@@ -19,7 +19,10 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
-
+.logo {
+  width: 150px;
+  height: auto;
+}
 h1 {
   margin-bottom: 20px;
   color: var(--red);
@@ -41,14 +44,28 @@ h1 {
 }
 
 .options-row {
-  display: flex;
-  gap: 2px;
+  display: grid;
+  gap: 8px;
+  height: 100%;
+}
+
+/* 2 seçenek → 2 sütun */
+.options-row[data-count="2"] {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* 3 seçenek → 3 sütun */
+.options-row[data-count="3"] {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* 4 seçenek → 2x2 */
+.options-row[data-count="4"] {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .option-btn {
-  flex: 1;
-  height: 400px;
-  padding: 40px 20px;
   border: none;
   border-radius: 8px;
   background: var(--red);
@@ -57,8 +74,22 @@ h1 {
   font-size: 18px;
   font-weight: bold;
   transition: background 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
+.option-btn:hover {
+  background: var(--dark-red);
+  transform: scale(1.03);
+}
+
+
+.option-btn:active {
+  background: var(--black);
+  transform: scale(0.95);
+}
 .option-restart-btn {
   flex: 1;
   margin-top: 20px;
@@ -74,17 +105,10 @@ h1 {
   transition: background 0.3s, transform 0.3s;
 }
 
-.option-btn:hover {
-  background: var(--dark-red);
-  transform: scale(1.05);
-}
-
-.option-btn:active {
-  background: var(--black);
-  transform: scale(0.95);
-}
-
 .results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 8px;
   background-color: #f4f4f4; 
   border-radius: 16px;
@@ -188,3 +212,237 @@ h1 {
   padding: 2px 6px;
   border-radius: 8px;
 }
+
+.fic-create-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.fic-create-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.fic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fic-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.fic-form input,
+.fic-form textarea,
+.fic-form button {
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.fic-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.fic-form button {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fic-form button:hover {
+  background-color: #555;
+}
+
+/* Başlangıç menüsü - üç alt alta seçenek */
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* üç buton ekranı eşit bölsün */
+  align-items: center;
+  height: calc(100vh - 200px); /* logo ve padding çıkar */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.menu-options button {
+  flex: 1; /* her buton eşit yükseklikte */
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.menu-options button:hover {
+  background-color: var(--dark-red);
+  transform: scale(1.05);
+}
+
+.menu-options button:active {
+  background-color: var(--black);
+  transform: scale(0.95);
+}
+.back-menu-btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 15px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--red);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.back-menu-btn:hover {
+  background-color: var(--dark-red);
+  transform: scale(1.05);
+}
+
+.back-menu-btn:active {
+  background-color: var(--black);
+  transform: scale(0.95);
+}
+
+.fic-create-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: var(--red);
+}
+
+.fic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fic-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+}
+
+.fic-form input,
+.fic-form textarea {
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.fic-form input:focus,
+.fic-form textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 4px rgba(207, 70, 74, 0.4);
+  outline: none;
+}
+
+.fic-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.tag-suggestions {
+  margin-top: 5px;
+  list-style: none;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tag-suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tag-suggestions li:hover {
+  background: #f0f0ff;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-chip {
+  background: var(--white);
+  color: var(--red);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-chip button {
+  border: none;
+  background: transparent;
+  color: var(--red);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.submit-btn {
+  padding: 12px;
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #372dd6;
+}
+
+
+
